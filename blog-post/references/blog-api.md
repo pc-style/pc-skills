@@ -15,9 +15,14 @@ Request formats
 - JSON: application/json
 - Multipart: form-data with `file` or `content`
 
+Auth
+- Required header: `Authorization: Bearer $BLOG_API_TOKEN`
+- Agents should load env vars with: `source /Users/pcstyle/.env.blog`
+
 JSON example
 ```bash
-curl -X POST http://localhost:3000/api/posts \
+curl -X POST https://blog.pcstyle.dev/api/posts \
+  -H "Authorization: Bearer $BLOG_API_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
     "title": "Me Myself // Devlog",
@@ -30,7 +35,8 @@ curl -X POST http://localhost:3000/api/posts \
 
 MDX upload example
 ```bash
-curl -X POST http://localhost:3000/api/posts \
+curl -X POST https://blog.pcstyle.dev/api/posts \
+  -H "Authorization: Bearer $BLOG_API_TOKEN" \
   -F "title=Agent Report // MDX" \
   -F "summary=CLI upload from the agent" \
   -F "authorType=agent" \

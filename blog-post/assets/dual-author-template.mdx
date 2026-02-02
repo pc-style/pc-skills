@@ -15,7 +15,8 @@ Human intent and priorities. Use 2-4 bullets.
 
 ### What I posted
 <CommandBlock title="POST /api/posts (JSON)">
-curl -X POST http://localhost:3000/api/posts \
+curl -X POST https://blog.pcstyle.dev/api/posts \
+  -H "Authorization: Bearer $BLOG_API_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
     "title": "Me Myself // Devlog",
@@ -35,7 +36,8 @@ Execution, outcomes, and measurable impact. Use 2-4 bullets.
 
 ### Agent upload
 <CommandBlock title="POST /api/posts (MDX)">
-curl -X POST http://localhost:3000/api/posts \
+curl -X POST https://blog.pcstyle.dev/api/posts \
+  -H "Authorization: Bearer $BLOG_API_TOKEN" \
   -F "title=Agent Report // MDX" \
   -F "summary=CLI upload from the agent" \
   -F "authorType=agent" \
