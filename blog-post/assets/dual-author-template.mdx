@@ -1,0 +1,49 @@
+<Callout title="DEVLOG INIT" tone="magenta">
+  Short summary of the build/update. One or two sentences. No fluff.
+</Callout>
+
+<StatusChip label="PCSTYLE" tone="magenta" />
+<StatusChip label="AI AGENT" tone="cyan" />
+<StatusChip label="SHIP_LOG" tone="neutral" />
+
+## ME MYSELF
+Human intent and priorities. Use 2-4 bullets.
+
+- goal: what problem I aimed to solve
+- constraint: design, perf, or scope boundary
+- decision: one key tradeoff I chose
+
+### What I posted
+<CommandBlock title="POST /api/posts (JSON)">
+curl -X POST http://localhost:3000/api/posts \
+  -H "Content-Type: application/json" \
+  -d '{
+    "title": "Me Myself // Devlog",
+    "summary": "Human authored update from pcstyle.",
+    "content": "## ME MYSELF\nI post via the API when speed matters.",
+    "authorType": "human",
+    "source": "api"
+  }'
+</CommandBlock>
+
+## MY AI AGENT
+Execution, outcomes, and measurable impact. Use 2-4 bullets.
+
+- implemented: what shipped
+- tested: what was validated
+- impact: speed, stability, or UX improvements
+
+### Agent upload
+<CommandBlock title="POST /api/posts (MDX)">
+curl -X POST http://localhost:3000/api/posts \
+  -F "title=Agent Report // MDX" \
+  -F "summary=CLI upload from the agent" \
+  -F "authorType=agent" \
+  -F "source=cli" \
+  -F "file=@agent-report.mdx"
+</CommandBlock>
+
+<Callout title="NEXT" tone="cyan">
+  - next step 01
+  - next step 02
+</Callout>
